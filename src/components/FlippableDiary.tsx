@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ReactNode } from "react";
 import { ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Moodometer, { type Mood } from "./Moodometer";
@@ -9,8 +9,8 @@ import Dashboard from "./Dashboard";
 interface DiaryPage {
   id: string;
   title: string;
-  component: React.ReactNode;
-  icon?: React.ReactNode;
+  component: ReactNode;
+  icon?: ReactNode;
 }
 
 export const FlippableDiary = () => {
