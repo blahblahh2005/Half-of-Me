@@ -84,11 +84,22 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'page-flip': {
+					'0%': { transform: 'rotateY(0deg)' },
+					'50%': { transform: 'rotateY(-90deg)' },
+					'100%': { transform: 'rotateY(-180deg)' }
+				},
+				'book-open': {
+					'0%': { transform: 'scale(0.9) rotateX(10deg)', opacity: '0' },
+					'100%': { transform: 'scale(1) rotateX(0deg)', opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'page-flip': 'page-flip 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+				'book-open': 'book-open 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
 			}
 		}
 	},

@@ -227,4 +227,39 @@
     border-color: hsl(var(--mood-accent));
     box-shadow: 0 0 0 2px hsla(var(--mood-accent), 0.2);
   }
+
+  /* Diary Book Styles */
+  .book-container {
+    background: hsl(var(--card));
+    box-shadow: 
+      0 0 30px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1px hsl(var(--border));
+    transform-style: preserve-3d;
+    animation: book-open 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .diary-page {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  .flipping {
+    animation: page-flip 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Enhanced Page Effects */
+  .page-shadow {
+    box-shadow: 
+      2px 0 8px rgba(0, 0, 0, 0.1),
+      0 0 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .book-spine-gradient {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--primary) / 0.3) 0%,
+      hsl(var(--primary) / 0.5) 50%,
+      hsl(var(--primary) / 0.3) 100%
+    );
+  }
 }
