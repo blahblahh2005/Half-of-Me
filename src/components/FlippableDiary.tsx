@@ -17,6 +17,7 @@ export const FlippableDiary = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
   const [mood, setMood] = useState<Mood>("enthusiastic");
+  const [showMoodTracker, setShowMoodTracker] = useState(false);
 
   // Apply mood theme to document
   useEffect(() => {
@@ -101,11 +102,28 @@ export const FlippableDiary = () => {
             {/* Book Spine */}
             <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-b from-primary/20 to-primary/40 border-r border-border" />
             
-            {/* Mood Tracker - Always visible when diary is open */}
+            {/* Set Mood Button - Always visible when diary is open */}
             {currentPage > 0 && (
               <div className="absolute top-4 right-4 z-10">
+                <Button
+                  onClick={() => setShowMoodTracker(!showMoodTracker)}
+                  variant="outline"
+                  size="sm"
+                  className="mood-button"
+                >
+                  Set Mood
+                </Button>
+              </div>
+            )}
+            
+            {/* Mood Tracker Popup */}
+            {showMoodTracker && currentPage > 0 && (
+              <div className="absolute top-16 right-4 z-20">
                 <div className="bg-card/95 backdrop-blur-sm rounded-lg border border-border p-2 shadow-lg">
-                  <Moodometer currentMood={mood} onMoodChange={setMood} />
+                  <Moodometer currentMood={mood} onMoodChange={(newMood) => {
+                    setMood(newMood);
+                    setShowMoodTracker(false);
+                  }} />
                 </div>
               </div>
             )}
