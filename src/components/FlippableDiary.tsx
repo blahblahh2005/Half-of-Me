@@ -25,9 +25,9 @@ export const FlippableDiary = () => {
 
   const handleNavigate = (section: 'ideas' | 'letters') => {
     if (section === 'ideas') {
-      flipToPage(3); // Ideas page
+      flipToPage(2); // Ideas page
     } else if (section === 'letters') {
-      flipToPage(4); // Letters page
+      flipToPage(3); // Letters page
     }
   };
 
@@ -53,11 +53,6 @@ export const FlippableDiary = () => {
       id: "dashboard",
       title: "Dashboard",
       component: <Dashboard onNavigate={handleNavigate} />,
-    },
-    {
-      id: "moodometer",
-      title: "Mood Tracker",
-      component: <Moodometer currentMood={mood} onMoodChange={setMood} />,
     },
     {
       id: "ideas",
@@ -105,6 +100,15 @@ export const FlippableDiary = () => {
           <div className="relative bg-card rounded-2xl shadow-2xl overflow-hidden book-container">
             {/* Book Spine */}
             <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-b from-primary/20 to-primary/40 border-r border-border" />
+            
+            {/* Mood Tracker - Always visible when diary is open */}
+            {currentPage > 0 && (
+              <div className="absolute top-4 right-4 z-10">
+                <div className="bg-card/95 backdrop-blur-sm rounded-lg border border-border p-2 shadow-lg">
+                  <Moodometer currentMood={mood} onMoodChange={setMood} />
+                </div>
+              </div>
+            )}
             
             {/* Current Page */}
             <div 
