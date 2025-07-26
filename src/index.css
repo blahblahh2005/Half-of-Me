@@ -211,10 +211,10 @@
     transition: var(--transition-mood);
   }
 
-  .mood-button:hover {
-    background: hsl(var(--primary));
-    transform: translateY(-2px);
-    box-shadow: var(--mood-glow);
+  /* Remove hover effects - keep buttons static */
+  .mood-button span,
+  .mood-button svg {
+    opacity: 1 !important;
   }
 
   .mood-input {

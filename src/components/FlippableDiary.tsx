@@ -144,9 +144,6 @@ export const FlippableDiary = () => {
                   <h2 className="text-2xl font-semibold text-foreground">
                     {pages[currentPage]?.title}
                   </h2>
-                  <div className="text-sm text-muted-foreground">
-                    Page {currentPage + 1} of {pages.length}
-                  </div>
                 </div>
 
                 {/* Page Content */}
