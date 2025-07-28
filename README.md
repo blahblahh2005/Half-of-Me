@@ -8,11 +8,11 @@ Computer Science Girlies Hackathon 2025 **URL**: https://lovable.dev/projects/26
 
 There are several ways of editing your application.
 
-##**Inspiration💡:**
+## Inspiration💡:
 
 Unfinished ideas like poems, letters, code, art, often die in drafts because we fear judgment, lack inspiration, or don’t know how to finish. Mental health struggles amplify this. What if you could share half of something and let the world (or AI) help complete it, on your own terms?
 
-##**What it does🤷‍♀️:**
+## What it does🤷‍♀️:
 
 Half of Me is a mood-driven creative sanctuary where:
 
